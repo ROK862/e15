@@ -1,7 +1,7 @@
 # Project 1
 
 - By: Robbins Jefferson Kariseb
-- URL: <http://he15p1.appsuits.org>
+- URL: <http://hesp1.appsuits.org/>
 
 ## Outside resources
 
