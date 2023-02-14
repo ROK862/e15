@@ -5,9 +5,9 @@
 
 ## Outside resources
 
-- [ASCII Table - ASCII codes,hex,decimal,binary,html]: https://www.rapidtables.com/code/text/ascii-table.html
-- [Changing the Git user inside Visual Studio Code]: https://stackoverflow.com/questions/42318673/changing-the-git-user-inside-visual-studio-code
-- [PHP substr_count() Function]: https://www.w3schools.com/php/func_string_substr_count.asp#:~:text=The%20substr_count()%20function%20counts,substrings%20(see%20example%202).
+- [ASCII Table - ASCII codes,hex,decimal,binary,html](https://www.rapidtables.com/code/text/ascii-table.html)
+- [Changing the Git user inside Visual Studio Code](https://stackoverflow.com/questions/42318673/changing-the-git-user-inside-visual-studio-code)
+- [PHP substr_count() Function](https://www.w3schools.com/php/func_string_substr_count.asp#:~:text=The%20substr_count()%20function%20counts,substrings%20(see%20example%202).)
 
 ## Notes for instructor
 
