@@ -1,5 +1,5 @@
 <?php
-require "lib.php";
+require "helpers.php";
 
 $str_info = ["processed"=>false];
 

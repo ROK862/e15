@@ -13,4 +13,4 @@
 
 ### Structure:
 
-- To keep the codebase clean, I created an additional file called [`./lib.php`](https://github.com/ROK862/e15/blob/main/p1/lib.php) which contains code for String Processing.
+- To keep the codebase clean, I created an additional file called [`./helpers.php`](https://github.com/ROK862/e15/blob/main/p1/helpers.php) which contains code for String Processing.
