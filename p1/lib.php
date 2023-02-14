@@ -1,0 +1,142 @@
+<?php
+class StringProcessor 
+{
+    // String we are going to search through.
+    private $search_str = "";
+    private $vowels_str = "aeiou";
+
+    /**
+     * Object constructor.
+     */
+    function __construct ($_srt) 
+    {
+        $this->search_str = $_srt;
+    }
+
+    /**
+     * is_palindrome is used to test if the string is a palindrome.
+     * Return type: @Boolean
+     */
+    public function is_palindrome ()
+    {
+        $control_str = strtolower($this->search_str );
+        
+        return (strrev($control_str) == $control_str) ? "Yes" : "No";
+    }
+    
+    /**
+     * count_vowels is used to count the number of vowels in the given string.
+     * Return type: @Integer
+     */
+    public function count_vowels () 
+    {
+        $count = 0;
+        // Loop through each char in string vowels_str and count occurrences.
+        foreach (str_split($this->vowels_str) as $vowel) {
+            $count += substr_count(strtolower($this->search_str),$vowel);
+        }
+        return $count;
+    }
+
+    /**
+     * Converts the search string to a shifted version.
+     * The shifted string follows a rule where each char is shifted 1 index to the right.
+     * If current value is Z/z, shift starts from index 0.
+     */
+    public function get_letter_shift () 
+    {
+        $final_string = "";
+        
+        // Loop through the char set within the main string.
+        for ($index = 0; $index < strlen($this->search_str); $index++)
+        {   
+            // Test if the char is of type alphabet.
+            if (ctype_alpha($this->search_str[$index])) 
+            {
+                // Change the string into a ascii numeric (0-255 ranged).
+                $encoding = ord($this->search_str[$index]);
+
+                $alphabet_index = ($encoding + 1);
+
+                // Test if char is at z and needs to start at a.
+                if (($encoding + 1) === 123) 
+                {
+                    $alphabet_index = 97;
+                } 
+                // Now check if char is at Z and needs to start at A.
+                else if (($encoding + 1) === 91)
+                {
+                    $alphabet_index = 41;
+                }
+                
+                $final_string .= chr($alphabet_index);
+            } else {
+                $final_string .= $this->search_str[$index];
+            }
+        }
+        
+        return $final_string;
+    }
+
+    /**
+     * This is an encryption function which uses OPEN SSL's AES-128-CTR algorithm to encrypt a search string.
+     */
+    public function get_encrypted_string ()
+    {
+        // Create a new array which will contain all our settings.
+        $descriptive = [];
+
+        // Update search string.
+        $descriptive["search_string"] = $this->search_str;
+
+        // Update Cipher algorithm which we will use to encrypt the text.
+        $descriptive["cipher_algorithm"] = "AES-128-CTR"; 
+
+        // Update the encryption key. Well, normally you want to hide this value.
+        $descriptive["encryption_key"] = "ROK862-Is-Awesome!";  
+
+        // Update the resulting output from encryption.
+        $descriptive["encryption_output"] = openssl_encrypt($descriptive["search_string"], $descriptive["cipher_algorithm"], $descriptive["encryption_key"]);                    
+        
+        // Update decrypted value.
+        $descriptive["decryption_output"] = openssl_decrypt($descriptive["encryption_output"], $descriptive["cipher_algorithm"], $descriptive["encryption_key"]);
+        
+        
+        return $descriptive;
+    }
+}
+
+class Helpers 
+{
+    public static function get_shift_index ($char) 
+    {
+        $chars = [];
+        $keys = [];
+        $value = 0;
+
+        // Create a hash-table for faster indexing.
+        foreach( range('A', 'Z') as $key) {
+            $keys[$key] = $value;
+            $chars[] = $key;
+            $value++;
+        }
+
+        $c_index = $keys[strtoupper($char)];
+
+        // Shift each char one place in the positive direction.
+        if ($c_index && $c_index !== 26) 
+        {
+            return $chars[$c_index];
+        } 
+        // We must be at the last char, so tack alphabet[-1].
+        else if ($c_index && $c_index === 26) 
+        {
+            return $chars[0];
+        } 
+        // Return -1 explicitly to indicate that we do not have an alphabetic char.
+        else 
+        {
+            return $char;
+        }
+    }
+}
