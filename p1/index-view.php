@@ -34,27 +34,32 @@
         <?php if ($str_info["processed"] == true) { ?>
         <div class="search-results">
             <h2>Results for: <span><?php echo $str_info["query"]; ?></span></h2>
-            <br />
             <h3>Is it a palindrome?</h3>
             <p><?php echo $str_info["palindrome"]; ?></p>
-            <br />
             <h3>How many vowels does it contain?</h3>
             <p><?php echo $str_info["vowels"]; ?></p>
-            <br />
             <h3>Letter shift</h3>
             <p><?php echo $str_info["shift"]; ?></p>
-            <br />
             <h3>Encrypted text.</h3>
             <p>
-                Search String: <?php echo $str_info["encrypted"]["search_string"]; ?>
+                <strong>Search String:</strong>
+                <br><?php echo $str_info["encrypted"]["search_string"]; ?>
                 <br>
-                Cipher Algorithm: <?php echo $str_info["encrypted"]["cipher_algorithm"]; ?>
                 <br>
-                Encryption Key: <?php echo $str_info["encrypted"]["encryption_key"]; ?>
+                <strong>Cipher Algorithm:</strong>
+                <br><?php echo $str_info["encrypted"]["cipher_algorithm"]; ?>
                 <br>
-                Encryption Output: <?php echo $str_info["encrypted"]["encryption_output"]; ?>
                 <br>
-                Decryption Output: <?php echo $str_info["encrypted"]["decryption_output"]; ?>
+                <strong>Encryption Key:</strong>
+                <br><?php echo $str_info["encrypted"]["encryption_key"]; ?>
+                <br>
+                <br>
+                <strong>Encryption Output:</strong>
+                <br><?php echo $str_info["encrypted"]["encryption_output"]; ?>
+                <br>
+                <br>
+                <strong>Decryption Output:</strong>
+                <br><?php echo $str_info["encrypted"]["decryption_output"]; ?>
             </p>
         </div>
         <?php } ?>

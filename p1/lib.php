@@ -105,38 +105,3 @@ class StringProcessor
         return $descriptive;
     }
 }
-
-class Helpers 
-{
-    public static function get_shift_index ($char) 
-    {
-        $chars = [];
-        $keys = [];
-        $value = 0;
-
-        // Create a hash-table for faster indexing.
-        foreach( range('A', 'Z') as $key) {
-            $keys[$key] = $value;
-            $chars[] = $key;
-            $value++;
-        }
-
-        $c_index = $keys[strtoupper($char)];
-
-        // Shift each char one place in the positive direction.
-        if ($c_index && $c_index !== 26) 
-        {
-            return $chars[$c_index];
-        } 
-        // We must be at the last char, so tack alphabet[-1].
-        else if ($c_index && $c_index === 26) 
-        {
-            return $chars[0];
-        } 
-        // Return -1 explicitly to indicate that we do not have an alphabetic char.
-        else 
-        {
-            return $char;
-        }
-    }
-}
