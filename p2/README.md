@@ -5,8 +5,8 @@
 
 ## Outside resources
 
-- [AlphaVantageApiServices Class](https://www.rapidtables.com/code/text/ascii-table.html) references external API's for stock price lookups.
-- [External Image Referenced](https://www.indiamart.com/proddetail/jackpot-tips-stocks-and-mcx-21866852073.html)
+- [AlphaVantageApiServices Class](https://www.alphavantage.co/) references external API's for stock price lookups.
+- [External Image Referenced]([https://www.indiamart.com/proddetail/jackpot-tips-stocks-and-mcx-21866852073.html](https://www.indiamart.com/proddetail/jackpot-tips-stocks-and-mcx-21866852073.html))
 
 ## Notes for instructor
 
