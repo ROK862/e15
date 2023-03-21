@@ -32,11 +32,11 @@
             <!-- form inputs here -->
             <label for="purchase-date">Stock Purchase Date:</label>
             <input @if (isset($error) && $error==true) value={{$date}} @endif type="date" id="purchase-date"
-                name="purchase-date"><br><br>
+                name="purchase-date" required><br><br>
 
             <label for="purchase-shares">Purchase Shares:</label>
             <input @if (isset($error) && $error==true) value={{$shares}} @endif type="number" id="purchase-shares"
-                name="purchase-shares"><br><br>
+                name="purchase-shares" required><br><br>
 
             <label for="stock-symbol">Stock Symbol:</label>
             <select @if (isset($error) && $error==true) value={{$symbol}} @endif id="stock-symbol" name="stock-symbol">
