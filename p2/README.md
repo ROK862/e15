@@ -1,19 +1,17 @@
 # Project 2
 
-- By: Robbins Kariseb
-- URL: <http://e15p2.appsuits.org/>
+-   By: Robbins Kariseb
+-   URL: <http://e15p2.appsuits.org/>
 
 ## Outside resources
 
-- [AlphaVantageApiServices Class](https://www.alphavantage.co/) references external API's for stock price lookups.
-- [External Image Referenced](https://www.indiamart.com/proddetail/jackpot-tips-stocks-and-mcx-21866852073.html)
+-   [app/Helpers/ApiProvider Class](https://www.alphavantage.co/) references external API's for stock price lookups.
+-   [External Image Referenced](https://www.indiamart.com/proddetail/jackpot-tips-stocks-and-mcx-21866852073.html)
 
 ## Notes for instructor
 
+-   It is important to note that the external API service provider for Stock Data [Alpha Vantage](https://www.alphavantage.co/) limits the number of calls per minute to 5. Each post request on the form makes two calls to the Alpha Vantage servers. Hence, you need to test only two times per minute. There is an exception generated, but the try catch block will be triggered.
+
 ### Structure:
 
-- There is a helper provider which I created using the `php artisan make:provider UtilityServiceProvider` command. It can be found in `p2\app\Helpers\helpers.php` as per the referenced in `p2\config\app.php` 
-```php 
-'providers' => [ App\Providers\UtilityServiceProvider::class,]
-``` 
-- This providor contains a class named `AlphaVantageApiServices` which handles all external API calls for financial data.
+-   I used a provider and controller for most of the heavy lifting. That is, one provider and one controllers in total. `[StockController.php, ApiProvider.php]`. These two files help clean the code up in `Routes/web.php`.

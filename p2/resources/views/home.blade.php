@@ -1,66 +1,58 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('layouts.app')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@section('title', 'Investment Calculator')
 
-    <title>Investment Calculator</title>
+@section('content')
+<div class="application-wrapper">
+    <h1>Investment Calculator</h1>
 
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-</head>
+    <p class="message-info">
+        The Investment Calculator takes in a Purchase Date, Purchase Shares, and Stock Symbol to calculate the
+        amount of profit or loss you gained or lost from the closing price on the purchase date compared to the
+        current
+        price.
+        <img src="{{ asset('images/investment-calculator.webp') }}" alt="stock calculator" />
+    </p>
+    
+    <form action="/process" method="POST">
+        @csrf
+        <!-- form inputs here -->
+        <label for="purchase-date">Stock Purchase Date:</label>
+        <input value="{{ old('purchase-date') }}" type="date" id="purchase-date" name="purchase-date"><br><br>
 
-<body class="antialiased">
-    <div class="application-wrapper">
-        <h1>Investment Calculator</h1>
+        <label for="purchase-shares">Purchase Shares:</label>
+        <input value="{{ old('purchase-shares') }}" type="number" id="purchase-shares" name="purchase-shares"><br><br>
 
-        <p class="message-info">
-            The Investment Calculator takes in a Purchase Date, Purchase Shares, and Stock Symbol to calculate the
-            amount of profit or loss you gained or lost from the closing price on the purchase date compared to the
-            current
-            price.
-            <img src="{{ asset('images/investment-calculator.webp') }}" alt="stock calculator" />
-        </p>
+        <label for="stock-symbol">Stock Symbol:</label>
+        <select value="{{ old('stock-symbol') }}" id="stock-symbol" name="stock-symbol">
+            <option value="AAPL">Apple Inc.</option>
+            <option value="AMZN">Amazon.com Inc.</option>
+            <option value="GOOG">Alphabet Inc.</option>
+            <option value="FB">Facebook Inc.</option>
+            <option value="NFLX">Netflix Inc.</option>
+            <option value="TSLA">Tesla Inc.</option>
+            <option value="MSFT">Microsoft Corporation</option>
+            <option value="NVDA">NVIDIA Corporation</option>
+            <option value="JPM">JPMorgan Chase &amp; Co.</option>
+            <option value="V">Visa Inc.</option>
+            <option value="PG">Procter &amp; Gamble Co.</option>
+            <option value="JNJ">Johnson &amp; Johnson</option>
+            <option value="WMT">Walmart Inc.</option>
+            <option value="UNH">UnitedHealth Group Inc.</option>
+            <option value="XOM">Exxon Mobil Corporation</option>
+        </select><br><br>
 
-        @if(isset($error) && $error == true)
+        <button type="submit">Calculate Profit/List</button>
+    </form>
+
+    @if(count($errors) > 0)
+    <div class="alert alert-danger">
+        @foreach ($errors->all() as $error)
         <p class="message-error">
-            {{ $message }}
+            {{ $error }}
         </p>
-        @endif
-
-        <form action="/app/results" method="POST">
-            @csrf
-            <!-- form inputs here -->
-            <label for="purchase-date">Stock Purchase Date:</label>
-            <input @if (isset($error) && $error==true) value={{$date}} @endif type="date" id="purchase-date"
-                name="purchase-date" required><br><br>
-
-            <label for="purchase-shares">Purchase Shares:</label>
-            <input @if (isset($error) && $error==true) value={{$shares}} @endif type="number" id="purchase-shares"
-                name="purchase-shares" required><br><br>
-
-            <label for="stock-symbol">Stock Symbol:</label>
-            <select @if (isset($error) && $error==true) value={{$symbol}} @endif id="stock-symbol" name="stock-symbol">
-                <option value="AAPL">Apple Inc.</option>
-                <option value="AMZN">Amazon.com Inc.</option>
-                <option value="GOOG">Alphabet Inc.</option>
-                <option value="FB">Facebook Inc.</option>
-                <option value="NFLX">Netflix Inc.</option>
-                <option value="TSLA">Tesla Inc.</option>
-                <option value="MSFT">Microsoft Corporation</option>
-                <option value="NVDA">NVIDIA Corporation</option>
-                <option value="JPM">JPMorgan Chase &amp; Co.</option>
-                <option value="V">Visa Inc.</option>
-                <option value="PG">Procter &amp; Gamble Co.</option>
-                <option value="JNJ">Johnson &amp; Johnson</option>
-                <option value="WMT">Walmart Inc.</option>
-                <option value="UNH">UnitedHealth Group Inc.</option>
-                <option value="XOM">Exxon Mobil Corporation</option>
-            </select><br><br>
-
-            <button type="submit">Calculate Profit/List</button>
-        </form>
+        @endforeach
     </div>
-</body>
-
-</html>
+    @endif
+</div>
+@endsection('content')

@@ -213,4 +213,14 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
+        /*
+    |--------------------------------------------------------------------------
+    | Stock API Keys
+    |--------------------------------------------------------------------------
+    |
+    | This section keeps track of the Alpha Vantage API Keys
+    |
+    */
+    'alpha_vantage_key' => "DEIMSC74QZZPUZY8",
+
 ];
