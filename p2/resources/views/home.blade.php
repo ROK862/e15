@@ -16,8 +16,9 @@
 
         <p class="message-info">
             The Investment Calculator takes in a Purchase Date, Purchase Shares, and Stock Symbol to calculate the
-            amount
-            of profit/loss you gained/lost from the closing price on the purchase date and the current price.
+            amount of profit or loss you gained or lost from the closing price on the purchase date compared to the
+            current
+            price.
             <img src="{{ asset('images/investment-calculator.webp') }}" alt="stock calculator" />
         </p>
 
