@@ -1,0 +1,32 @@
+tr.highlighted {
+    background: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
+
+.summary table {
+    width: 100%;
+    border: 2px solid gray;
+    padding: 10px;
+}
+
+.summary table thead {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+p.message-info {
+    font-size: 19px;
+    padding: 15px;
+    border: 2px solid #03A9F4;
+    border-radius: 10px;
+    background: #d3f1ff;
+}
+
+p.message-error {
+    font-size: 19px;
+    padding: 15px;
+    border: 2px solid #F44336;
+    border-radius: 10px;
+    background: #ffd3d3;
+}

@@ -53,7 +53,7 @@ class StringProcessor
             // Test if the char is of type alphabet.
             if (ctype_alpha($this->search_str[$index])) 
             {
-                // Change the string into a ascii numeric (0-255 ranged).
+                // Convert char into a ascii numeric (0-255 ranged).
                 $encoding = ord($this->search_str[$index]);
 
                 $alphabet_index = ($encoding + 1);

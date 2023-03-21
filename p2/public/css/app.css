@@ -1,0 +1,70 @@
+tr.highlighted {
+    background: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
+
+.summary table {
+    width: 100%;
+    border: 2px solid gray;
+    padding: 10px;
+}
+
+.summary table thead {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+p.message-info {
+    font-size: 19px;
+    padding: 15px;
+    border: 2px solid #03A9F4;
+    border-radius: 10px;
+    background: #d3f1ff;
+}
+
+p.message-error {
+    font-size: 19px;
+    padding: 15px;
+    border: 2px solid #F44336;
+    border-radius: 10px;
+    background: #ffd3d3;
+}
+
+.application-wrapper {
+    margin: auto;
+    width: 70%;
+    max-width: 610px;
+}
+
+.application-wrapper p img {
+    width: 210px;
+    margin: auto;
+    display: block;
+    margin-top: 30px;
+    border: 2px solid #03A9F4;
+    border-radius: 40px;
+}
+
+form {
+    margin: 0;
+    border: 2px solid #e3e3e3;
+    padding: 25px;
+    box-shadow: 7px 7px 20px 11px #00000012;
+    border-radius: 15px;
+}
+
+input, select, button {
+    display: block;
+    width: 200px;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 15px;
+    border: 1px solid #d7d7d7;
+}
+
+button {
+    background: #2196F3;
+    color: white;
+    font-weight: bold;
+}
