@@ -68,3 +68,24 @@ button {
     color: white;
     font-weight: bold;
 }
+
+nav table {
+    width: 100%;
+    padding: 10px;
+}
+
+nav {
+    margin: 0;
+    box-shadow: 5px 5px 18px 0px #00000026;
+    border-radius: 5px;
+}
+
+nav table form {
+    
+}
+
+nav table form input#search-input {
+    padding: 5px;
+    border: none;
+    border-bottom: 2px solid black;
+}

@@ -1,0 +1,279 @@
+nav table {
+    width: 100%;
+    margin: 0;
+}
+
+nav {
+    margin: 0;
+    box-shadow: 5px 5px 16px 3px #00000017;
+    position: static;
+    height: 100px;
+    overflow: hidden;
+    border-bottom: 5px solid #673AB7;
+    border-radius: 15px;
+}
+
+nav table form button {
+    padding: 10px;
+    border: none;
+    border-bottom: 4px solid #e3e3e3;
+    border-radius: 10px;
+    background: transparent;
+}
+
+nav table ul {
+    display: flex;
+    list-style: none;
+}
+
+nav table ul li {
+    padding: 10px;
+    margin: 5px;
+}
+
+nav table ul li:hover {
+    border-bottom: 2px solid black;
+    cursor: pointer;
+}
+
+nav table ul li a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #673AB7;
+}
+
+nav table form {
+    display: block;
+}
+
+nav table form input#search-input {
+    padding: 10px;
+    border: none;
+    border-bottom: 4px solid #e3e3e3;
+    border-radius: 10px;
+}
+
+.shop-items-wrapper {
+    width: 100%;
+}
+
+.shop-items-wrapper .item-container {
+    display: inline-grid;
+    width: 300px;
+    margin: 5px;
+    border: 2px solid #efefef;
+    padding: 15px;
+    border-radius: 15px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.shop-items-wrapper .item-container .image {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.shop-items-wrapper .item-container .image img {
+    height: 100%;
+}
+
+.item-container:hover {
+    box-shadow: 5px 5px 16px 3px #00000017;
+    cursor: pointer;
+}
+
+nav table ul li img {
+    width: 60px;
+}
+
+main {
+    margin: 0px 10% 0px 10%;
+    padding: 0% 2% 5% 2%;
+}
+
+form.general-form .general-input-wrapper {
+    width: 100%;
+}
+
+form.general-form .general-input-wrapper input {
+    width: 100%;
+    max-width: 500px;
+    padding: 5px;
+    margin: 5px;
+    border: 2px solid #ebebeb;
+    border-radius: 5px;
+}
+
+form.general-form .general-input-wrapper textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 5px;
+    margin: 5px;
+    border: 2px solid #ebebeb;
+    border-radius: 5px;
+    height: 100px;
+}
+
+form.general-form h4 {
+    font-size: 25px;
+    text-transform: uppercase;
+    color: #673AB7;
+}
+
+form.general-form {
+    text-align: center;
+    margin: auto;
+    margin-top: 50px;
+    width: 555px;
+    padding: 15px;
+    box-shadow: 5px 5px 18px 3px #00000024;
+}
+
+p.message-info,
+div.message-info {
+    padding: 10px;
+    background: #eafcff;
+    border: 2px solid #03A9F4;
+}
+
+p.message-warning,
+div.message-warning {
+    padding: 10px;
+    background: #fffbea;
+    border: 2px solid #f4a403;
+}
+
+p.message-error,
+div.message-error {
+    padding: 10px;
+    background: #ffeaea;
+    border: 2px solid #f40303;
+}
+
+button.action-buttons.friendly {
+    padding: 7px;
+    min-width: 80px;
+    background: #673AB7;
+    border: none;
+    color: white;
+    border-radius: 2px;
+}
+
+button.action-buttons.encouraged {
+    padding: 7px;
+    min-width: 80px;
+    background: #3a94b7;
+    border: none;
+    color: white;
+    border-radius: 2px;
+}
+
+button.action-buttons.unfriendly {
+    padding: 7px;
+    min-width: 80px;
+    background: #b73a3a;
+    border: none;
+    color: white;
+    border-radius: 2px;
+}
+
+.active-sales {
+    width: 100%;
+    overflow: hidden;
+    height: 100px;
+    box-shadow: 5px 5px 20px 4px #00000021;
+}
+
+.active-sales img {
+    position: relative;
+    z-index: -1;
+    top: -40px;
+    width: 100%;
+}
+
+.active-sales h2.header-message {
+    height: 0px;
+    position: relative;
+    top: 20px;
+    padding-left: 20px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 30px;
+}
+
+.localized-search {
+    display: block;
+}
+
+.shop-items-wrapper.flex {
+    display: flex;
+}
+
+.localized-search form {
+    width: 50%;
+    min-width: 300px;
+    margin: auto;
+    text-align: center;
+}
+
+.localized-search form input#search-input {
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    border: 2px solid #b5b5b5;
+    border-radius: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+#salesreport {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#salesreport td,
+#salesreport th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#salesreport tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#salesreport tr:hover {
+    background-color: #ddd;
+}
+
+#salesreport th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #673AB7;
+    color: white;
+}
+
+@media print {
+    .none-printable {
+        display: none;
+    }
+
+    main {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+
+form#visibility_visible,
+form#visibility_hidden {
+    width: 50px;
+    display: inline-block;
+}
