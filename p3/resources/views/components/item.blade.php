@@ -18,8 +18,14 @@
         @if ($mode == 'manage')
         <h4>
             <a href="/edit/{{ $product_id }}"><button type="button" class="action-buttons encouraged">Edit</button></a>
-            <a href="/edit/{{ $product_id }}"><button type="button"
-                    class="action-buttons unfriendly">Delete</button></a>
+            <a href="#">
+                <form method='POST' id='delete_item' action='/items/{{ $product_id }}'>
+                    {{ csrf_field() }}
+                    {{ method_field('DELETE') }}
+                    <button type="submit" class="action-buttons unfriendly"
+                        onclick="return confirm('Are you sure you want to delete this item?')">Delete</button>
+                </form>
+            </a>
             <a href="#">
                 <!--this feature will hide the item from the listings -->
                 @if ($product_visibility == 'hidden')

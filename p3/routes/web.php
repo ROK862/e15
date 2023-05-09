@@ -33,4 +33,6 @@ Route::group(["middleware" => "auth"], function () {
     Route::post('/orders', [OrdersController::class, 'store'])->name('orders.store');
 
     Route::get('/orders', [OrdersController::class, 'orders'])->name('orders.report');
+
+    Route::delete('/items/{item_id}', [ItemController::class, 'deleteItem'])->name('items.delete');
 });

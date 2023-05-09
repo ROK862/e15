@@ -106,4 +106,18 @@ class ItemController extends Controller
 
         return redirect()->back()->with('success', 'Visibility status updated successfully!');
     }
+
+
+    public function deleteItem($item_id)
+    {
+        $item = Item::find($item_id);
+
+        if (!$item) {
+            return response()->json(['message' => 'Item not found'], 404);
+        }
+
+        $item->delete();
+
+        return redirect()->route('manage');
+    }
 }

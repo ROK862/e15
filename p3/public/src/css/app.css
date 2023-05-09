@@ -273,7 +273,8 @@ button.action-buttons.unfriendly {
 
 
 form#visibility_visible,
+form#delete_item,
 form#visibility_hidden {
-    width: 50px;
+    width: 80px;
     display: inline-block;
 }
