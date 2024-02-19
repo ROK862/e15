@@ -1,3 +1,3 @@
-# Harvard Extensions' CSCI E-15.
+# Harvard University' CSCI E-15.
 
 - Base Directory.
